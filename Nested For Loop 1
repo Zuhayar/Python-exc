@@ -1,0 +1,5 @@
+students = [['Igor', 'Sokolov'], ['Riko', 'Miyazaki'], ['Tuva', 'Johansen']]
+for student in students:
+    for name in student: 
+        print(name)
+    print()
