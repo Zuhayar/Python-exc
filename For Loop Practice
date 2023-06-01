@@ -1,0 +1,38 @@
+def score_counter(score_list): 
+    positive = 0 
+    neutral = 0 
+    negative = 0 
+    
+    for score in score_list: 
+        if score < 6:
+            negative += 1
+        elif score < 9:
+            neutral += 1
+        else:
+            positive += 1
+            
+    print('Negative:', negative)
+    print('Neutral:',neutral)
+    print('positive:',positive)    
+    
+    -------
+    
+    # RUN THIS CELL TO TEST YOUR FUNCTION
+
+import random
+random.seed(42)
+
+possible_scores = list(range(1,11))
+score_list1 = random.choices(possible_scores, weights=[8,8,8,8,8,3,3,4,20,30], k=10)
+score_list2 = random.choices(possible_scores, weights=[1,2,3,4,5,10,15,15,7,9], k=450)
+score_list3 = random.choices(possible_scores, weights=[1,2,3,4,4,5,5,10,15,25], k=10000)
+
+score_counter(score_list1)  
+print('\nTest 2:')
+score_counter(score_list2)  
+print('\nTest 3:')
+score_counter(score_list3)  
+---------------------------------------------------------------------
+
+
+
