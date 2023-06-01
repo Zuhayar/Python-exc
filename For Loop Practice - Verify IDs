@@ -1,0 +1,26 @@
+# RUN THIS CELL TO TEST YOUR FUNCTION
+import ada_c2_labs as lab
+
+# TEST SCENARIOS:                                 
+print('Test 1:')
+ver1, fb1 = lab.lists_gen(8, 20, 15, 15)           
+id_validator(ver1, fb1)                            
+
+print('\nTest 2:')
+ver2, fb2 = lab.lists_gen(8, 1000, 900, 600)        
+id_validator(ver2, fb2)                           
+
+print('\nTest 3:')
+ver3, fb3 = lab.lists_gen(8, 15000, 14925, 13788)   
+id_validator(ver3, fb3)                             
+----------------------------------------------------------------
+def id_validator(valid_ids,feedback_ids):
+    unverified_ids = 0
+    for ids in feedback_ids:
+        if ids not in valid_ids: 
+             unverified_ids += 1
+    
+    percent_unverified = round(unverified_ids/ len(feedback_ids)*100,2)
+    print('Number of unverified IDS:', unverified_ids)
+    print(percent_unverified, 'percent of IDS are unverified')
+    
